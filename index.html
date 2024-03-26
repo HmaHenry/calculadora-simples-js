@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Desafio 3 (Aula 04) - Lógica de programação: praticando com desafios</h2>
+<br>
+<h3>Calculadora: </h3>
+
+Número 1: <input type="number" id="numero1" name="numero"> <br>
+Número 2: <input type="number" id="numero2" name="numero"> <br>
+<select id="operacao">
+	<option value="soma">Adição (+)</option>
+	<option value="subtracao">Subtração (-)</option>
+	<option value="multiplicacao">Multiplicação (*)</option>
+	<option value="divisao">Divisão (÷)</option>
+</select>
+ <br>
+ <br>
+	<button id="meuBotao" onclick="realizarOperacao()">=</button>
+	<p id=resultado><p>
+    <button id="meuBotao" onclick="limpar()">Limpar</button>    
+ <br>
+ <br>
+ <br>
+<p>OBS: A operação será na seguinte ordem: <br>
+(Número 1 - Número 2) ou (Número 1 / Número 2)<p>
+
+
+<script>
+function realizarOperacao () {
+let operacao = document.getElementById('operacao').value;
+let numero1 = parseFloat(document.getElementById('numero1').value);
+let numero2 = parseFloat(document.getElementById('numero2').value);
+
+if (operacao == 'soma') {
+    let resultadoSoma = numero1 + numero2;
+    document.getElementById('resultado').innerHTML = `Resultado = ${resultadoSoma}`;
+}
+
+if (operacao == 'subtracao') {
+    let resultadoSubtracao = numero1 - numero2;
+    document.getElementById('resultado').innerHTML = `Resultado = ${resultadoSubtracao}`;
+}
+
+if (operacao == 'multiplicacao') {
+    let resultadoMultiplicacao = numero1 * numero2;
+    document.getElementById('resultado').innerHTML = `Resultado = ${resultadoMultiplicacao}`;
+}
+
+if (operacao == 'divisao') {
+    let resultadoDivisao = numero1 / numero2;
+    document.getElementById('resultado').innerHTML = `Resultado = ${resultadoDivisao}`;
+}
+}
+
+function limpar() {
+    document.getElementById('resultado').innerHTML = "";
+    document.getElementById('numero1').value = "";
+    document.getElementById('numero2').value = "";
+}
+</script>
+
+</body>
+</html>
