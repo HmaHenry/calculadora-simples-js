@@ -48,8 +48,12 @@ if (operacao == 'multiplicacao') {
 }
 
 if (operacao == 'divisao') {
+    if (numero2 == 0) {
+        alert('Erro: Divisão por zero.');
+    } else {
     let resultadoDivisao = numero1 / numero2;
     document.getElementById('resultado').innerHTML = `Resultado = ${resultadoDivisao}`;
+    }
 }
 }
 
